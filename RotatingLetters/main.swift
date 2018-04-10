@@ -7,11 +7,34 @@
 //
 
 import Foundation
+// INPUT
+// loop forever until we get input
+while 1==1 {
+    
+    // prompt the user
+    print("Input word is?")
+    
+    
+    // make sure that there is no nil
+    // Wait for input
+    guard let givenInput = readLine () else {
+        
+        // If we got here, input is nil
+        // prompt again
+        continue // continue with the next iteration with while loop
+        
 
-// Get the user input
-var rawInput = readLine()
+}
+    
+    
+    
+    //test: is there input that exceeds the range
+    if  givenInput.count < 1 || givenInput.count > 30 {
+        
+        // if we got here the length of input is too long or short
+        continue // prompt again
+    }
+    // if we got to this point we know that input is good
+    break // quit the while loop ,and begin process section
 
-// Print out the input provided
-print("You said:")
-print(rawInput)
-
+}
