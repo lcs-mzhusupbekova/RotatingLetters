@@ -12,7 +12,7 @@ import Foundation
 
 var validInput = "" // so it can take  the value of givenInput, when we declare that validInput = givenInput
 
-while 1==1 {
+prompt: while 1==1 {
     
     // prompt the user
     print("Input word is?")
@@ -38,6 +38,23 @@ while 1==1 {
         continue // prompt again
     
     }
+
+    checking: for individualCharacter in givenInput {
+        
+        // DEBUG: Print the character we are looking at
+        print(individualCharacter)
+        
+        // Check the character
+        switch individualCharacter {
+        case "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z":
+            continue checking   // OK, go to iteration of loop that lets us
+        // inspect next character of the input string
+        default:
+            continue prompt     // Stop looking, we've found bad input, so go
+            // to next iteration of loop that lets prompt again
+            // for user input
+        }
+    }
     validInput = givenInput
     break
 }
@@ -50,7 +67,7 @@ while 1==1 {
         print(individualCharacter)
         // check characters
         switch individualCharacter {
-        case "I", "O", "H", "S", "Z", "X", "M":
+        case "I", "O", "H", "S", "Z", "X", "N":
             goodCharactersChecking += 1
             
             continue // ok go for next character in String
